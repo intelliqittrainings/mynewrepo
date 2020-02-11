@@ -1,0 +1,118 @@
+Setup of Ansible
+======================
+1 Create 4 AWS ubuntu instances
+2 Name the first one as Controller and the remainign as Server1,Server2 etc
+
+3 Downgrade python from python3 to python2.7 on all these  AWS instances
+  a)Connect to any of the 4 aws instances using git bash
+  b) Update the apt repository
+     sudo apt-get update
+  c) Downgrade the apt repository
+     sudo apt-get -y dist-upgrade
+  d) Install python2.7 and python-pip
+     sudo apt-get install -y python2.7 python-pip
+  Repeat Step no 3 on all managed nodes
+
+4 Establish passwordless ssh between Controller and managed nodes
+  a)Connect to Server1 uisng gitbash
+  b) Set a password for the ubuntu user
+     sudo passwd ubuntu
+  c) Edit the ssh config file
+     sudo vim /etc/ssh/sshd_config
+     Search for "PasswordAuthentication" and change it from no to yes
+  d) Restart ssh
+     sudo service ssh restart
+     Repeat Step no 4 on Server2 and also Server3
+
+5 Connect to Controller using git bash
+  a) Generate the ssh keys
+     ssh-keygen
+  b) copy the ssh keys 
+     ssh-copy-id ubuntu@private_ip_of_all_managed_nodes
+
+6 Installing Ansible on Controller
+  a) Update the apt repository
+     sudo apt-get update
+  b) Install software-properties-common
+     sudo apt-get install software-properties-common
+  c) Add latest ansible ppa to the apt repository
+     sudo apt-add-repository ppa:ansible/ansible
+  d) update the apt repository
+     sudo apt-get update
+  e) Install ansible
+     sudo apt-get install -y ansible
+
+
+sudo vim /etc/ansible/hosts
+
+
+command
+shell
+ping
+user
+copy
+fetch
+file
+apt
+yum
+service
+git
+uri
+stat
+debug
+include
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
