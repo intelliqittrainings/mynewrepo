@@ -1,0 +1,75 @@
+Linking of docker containers
+==================================
+Multiple docker containers can be linked with each other
+to create a multi container architecture.This is generally used to setup
+the required Development environment or Testing environment.
+
+Linking can be done in the following 3 ways
+==============================================
+1 --link option (Legacy)
+2 docker-compose
+3 Docker networking
+
+1 --link is a option used in run command and it is depricated.
+I will discuss docker networking and docker compose in another 
+article where we will create a multi container architrecture 
+in a much better way but for now we will use --link option.
+
+Let us take a use case where 2 busybox(a floavour of linux) containers
+are linked with each other using the --link option.If this linking is 
+done we should be able to ping from one busybox to another busybox
+container.
+
+You can watch the below video to understand this practically 
+Step by step command are also provided in the document
+
+Video 1  on docker linking
+
+1 Create a busybox container and name it c1
+  docker run --name c1 -it busybox
+
+2 come out of the first busy contianer without exit
+  ctrl+p,ctrl+q
+
+3 Create another busybox container c2 and link it with c1
+  docker run --name c1 -it --link c1:intelliqit_busybox busybox
+
+4 Check if we can ping from the c2 container to c1 container
+  ping c1
+
+
+Let us take another example to understand this better
+We will take a use case where we will link a mysql:5 docker container
+with a wordpress docker container.This will act as a development 
+environment for a wordpress developer to build his wordpress website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

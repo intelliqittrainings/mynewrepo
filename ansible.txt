@@ -1,0 +1,134 @@
+Setup of ansible
+===================
+1 Create 3-4 ubuntu18 AWS instances
+2 Name the 1st once as "Controller" and the remaining as "Managed nodes"
+3 On all these instances install python2.7
+  a) sudo apt-get update
+  b) sudo apt-get dist-upgrade
+  c) sudo apt-get install -y python2.7 python-pip
+  Repeat Step no 3 on all the AWS instances
+4 Setup passwordless shh between the controller and the managed nodes
+  a) Connect to one managed node and set a password for "ubuntu" user
+     sudo passwd ubuntu
+     Enter a new password
+  b) Edit the ssh config file
+     sudo vim /etc/ssh/sshd_config
+     Search for "PasswordAuthentication" and change it from not to yes
+     Save and quit
+  c) Restart ssh
+     sudo service ssh restart
+     Repeat Step a-c on all the managed nodes
+  d) Connect to controller using git bash
+  e) Generate the shh keys
+     ssh-keygen
+  f) Copy the ssh keys
+     ssh-copy-id ubuntu@private_ip_of_managednodes
+5 Install ansible on the controller
+  a) Update the apt repository
+     sudo apt-get update
+  d) Install software-properties-common
+     sudo apt-get install software-properties-common
+  c) Add the latest version of ansible ppa repository to the apt repository
+     sudo apt-add-repository ppa:ansible/ansible
+  d) Update the apt repository
+     sudo apt-get update
+  e) Install ansible
+     sudo apt-get install -y ansible
+6 To check the version of ansible
+  ansible --version
+
+
+
+sudo vim /etc/ansible/hosts
+172.31.36.247
+172.31.35.219
+172.31.39.177
+
+Save and quit
+
+
+
+command
+shell
+ping
+copy
+fetch
+file
+user
+apt
+yum
+service 
+git
+uri
+debug
+stat
+include
+ec2
+docker_container
+docker_image
+docker_login
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+

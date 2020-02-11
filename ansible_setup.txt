@@ -1,0 +1,132 @@
+
+Setup of Server for ansible
+==============================
+1 Create 4 or 5 AWS ubuntu 18 instances
+2 Name the first one as controller and the remaining as server1...
+3 Downgrade python on all these machines
+  sudo apt-get update
+  sudo apt-get -y dist-upgrade
+  sudo apt-get install -y  python2.7 python-pip
+
+Setup passwordless ssh between the controller and the managed nodes
+1 Connect to server 1
+  sudo passwd ubuntu
+  sudo vim /etc/ssh/sshd_config
+  Search for "PasswordAuthentication" change it from no to yes
+  Restart ssh
+  sudo service ssh restart
+  Repeat this step on all the managed nodes
+
+2 Connect to controller
+  Generate the ssh keys
+  ssh-keygen
+  Copy the ssh-keys
+  ssh-copy-id ubuntu@private_of_all_managed_nodes
+
+Installing ansible
+========================
+1 Connect to the controller machine
+2 Update the apt repository
+  sudo apt-get update
+3 Install software-properties-common
+  sudo apt-get install software-properties-common
+4 Add the latest version of ansible ppa repository
+  sudo apt-add-repository ppa:ansible/ansible
+5 Update the apt repository
+  sudo apt-get update
+6 Install ansible
+  sudo apt-get install -y ansible
+7 To check the version of ansible
+  ansible --version
+
+Ansible performs remote configurations by reading a file called inventory file.In this file we have to mention the ip's of all the managed nodes
+
+sudo vim /etc/ansible/hosts
+Enter all the private ips
+Save and quit
+
+
+
+Important Modules in ansible
+====================================
+1 command
+2 shell
+3 ping
+4 user
+5 file
+6 copy
+7 fetch
+8 apt
+9 yum
+10 service
+12 uri
+13 debug
+14 git
+15 stat
+16 replace
+17 include
+18 pause
+19 docker_login
+20 docker_container
+21 docker_image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

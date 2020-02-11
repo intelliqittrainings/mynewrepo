@@ -1,0 +1,23 @@
+The job market for Kubernetes has grown exponentially in the last few
+years and it is still on a rising trend.Kubernetes is a tool for implementing container orchestration,IntelliQ-IT is the number 1 institute for 
+providing the  best kubernetes training in Ameerpet,Hyderabad
+
+Our Kubernetes training is designed from scratch to advanced levels so that even 
+a non techincal student can understand and in a structured way pay all the way up to 
+understand advanced components of Kubernetes.
+
+At IntelliQ-IT we provide best class room training and online training on Kubernetes
+We also assist the students in understanding the kubernetes interview questions and 
+as our courses are designed entirely on real time scenarios it becomes easy 
+for the professional kick start his career on Kubernetes.
+
+In addition we provide guidance to clear the kubernetes certification exam.
+  
+Unlike most of the Kubernetes tutorials that are available on Udemy or Youtube
+which either just talk about the Kubernetes basics or very advanced concepts of Kubernetes we at IntelliQ-IT provide the best Kubernetes training by bridging the
+gap between basic and advanced levels of Kubernetes.Here we teach Kubernetes in a step by step way starting from the very basics to intermediate level and then advanced level
+Due to this reason we have the highest number of candidates getting selected on Kubernetes jobs.
+
+
+
+

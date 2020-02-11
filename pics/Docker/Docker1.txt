@@ -1,0 +1,234 @@
+
+
+ansible all/group_name/ipadress -i inventory_file_path -m module_name -a                                                                   'arguments'
+
+
+Ansible command to see the memory information on all managed nodes
+ansible all -i /etc/ansible/hosts -m command -a 'free'
+
+Note: /etc/ansible/hosts is the default inventory file and when using it
+giving -i option in not mandatory
+ansible all  -m command -a 'free'
+
+Note: command module is the default module and when using it givin -m
+is not mandatory
+ansible all -a 'free'
+
+
+
+
+Ansible command to install docker on all managed nodes and check which version
+has been installed
+
+ansible all -m shell -a 'curl -fsSL https://get.docker.com -o get-docker.sh'
+
+ansible all -m shell -a 'sh get-docker.sh'
+
+ansible all -m command -a 'docker --version'
+
+
+
+
+
+
+
+
+
+Virtualization
+----------------
+Here we have a bare metal(H/W) on top of which we install the host OS and on the
+host OS we install an application called hypervisor.On the hypevisor we install 
+the Guest OS and on these guest os's we can install the applications that we require.The advantage is we can run multiple OS's on one H/W.The disadvantage
+of this is the applications running on guest os have to pass through so many layers to access the H/W resources.
+
+Containirization
+---------------------
+Here we have bare metal on whcih we instlal the host OS and on the host OS we install a s/w application called docker engine.On the docker engine we can install an application we want.These applications have to apss through less number of layers to access the H/W resources.
+
+Docker creates process isolation ie it remove the dependency that an application has on the OS and it allows them to run directly on and OS where docker is installed.
+
+Eg: MS SQL server which is designed to work on windows OS can be made to run on Linux or any other os if docker is installed on it.
+
+Docker can create the necessary environment in very less amount of time and it doesnot do any fixed amount of H/W allocation due to reason when the docker contianers are running depending the processes that are running docker engine can do the H/W allocation.
+
+Docker can be used at all the stages of
+Build---->Ship---->Run
+
+ie creating the application,deliverying the application and running it in production environment.
+
+Docker comes in 2 flavours
+1 Docker CE (Community Edition or Free)
+2 Docker EE (Enterprise Edition or Licensed)
+
+Installing Docker on Windows
+=============================
+1 Open https://docs.docker.com/docker-for-windows/install/
+2 Download docker for Windows
+3 Install it
+4 To run the docker command 
+  a) Open Power shell
+  b) Execute the docker commands
+
+Note: Docker can be installed on Windows 10 Prof x_64 bit machine or Windows 2016 Server editon
+
+Note: Once docker is installed on Windows it activates an application called Hyper-V and once this Hyper-V is activated it will not allow any other virtulaization technology to run.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
